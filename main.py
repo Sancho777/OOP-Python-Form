@@ -38,12 +38,12 @@ def build_registration_form() -> str:
     select.add_option("United States", "us")
     select.add_option("Canada", "ca")
     select.add_option("United Kingdom", "uk")
-    select.children[-1].attrs["selected"] = "selected"  # Mark UK as selected
+    select.children[-1].attrs["selected"] = "selected"
     select.add_option("Australia", "au")
     country_group.add_child(select)
     form_fields.add_child(country_group)
 
-    # Profile Picture (just image placeholder)
+    # Profile Picture
     pic_group = Div(**{"class": "form-group"})
     pic_group.add_child(HTMLElement("label").add_child("Profile Picture:") or "")
     pic_group.add_child(Img("/static/logo.png", alt="profile", **{"class": "h-16"}))
