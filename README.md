@@ -7,18 +7,18 @@ This project showcases how to build a **registration form web application** usin
 - 🎨 Bootstrap 5 (for styling)
 - 📦 Uvicorn (ASGI server)
 
-All HTML elements (`input`, `select`, `a`, `img`, `div`, `form`) are modeled using Python classes to demonstrate **object-oriented programming (OOP)** principles in a real-world web context.
+All HTML elements (`input`, `select`, `a`, `img`, `div`, and `form`) are modeled using Python classes to demonstrate **object-oriented programming (OOP)** principles in a real-world web context.
 
 ---
 
 ## 📌 Features
 
-✅ Object representation of HTML elements
-✅ Clean and modular HTML generation using Python classes
-✅ Responsive and styled registration form
-✅ Displays submitted data on a confirmation page
-✅ Centralized layout with consistent styling
-✅ Easy to run locally
+- ✅ Object representation of HTML elements
+- ✅ Clean and modular HTML generation using Python classes
+- ✅ Responsive and styled registration form
+- ✅ Displays submitted data on a confirmation page
+- ✅ Centralized layout with consistent styling
+- ✅ Easy to run locally
 
 ---
 
@@ -26,96 +26,112 @@ All HTML elements (`input`, `select`, `a`, `img`, `div`, `form`) are modeled usi
 
 Each HTML element used in the form is represented by a Python class:
 
+```python
 class HTMLElement:
-def **init**(self, tag: str, attrs: dict = None, content: str = "", self_closing=False):
-...
-def render(self) -> str:
-...
+    def __init__(self, tag: str, attrs: dict = None, content: str = "", self_closing=False):
+        ...
+    def render(self) -> str:
+        ...
+```
 
-Specialized Elements
-Input(HTMLElement) – supports type, name, placeholder, etc.
+### Specialized Elements
 
-Select(HTMLElement) – handles <option> children.
+- `Input(HTMLElement)` – supports `type`, `name`, `placeholder`, etc.
+- `Select(HTMLElement)` – handles `<option>` children
+- `A(HTMLElement)` – for links/buttons
+- `Img(HTMLElement)` – for image tags
+- `Div(HTMLElement)` – for layout and form groups
+- `Form(HTMLElement)` – complete form wrapper
 
-A(HTMLElement) – for links/buttons.
+---
 
-Img(HTMLElement) – for image tags.
+## 📄 Form Overview
 
-Div(HTMLElement) – for layout and form groups.
+### 📥 Registration Form Fields
 
-Form(HTMLElement) – complete form wrapper.
+- **Name** – Text input
+- **Email** – Email input
+- **Country** – Select dropdown
+- **Profile Picture** – Image placeholder
+- **Submit Button**
 
-📄 Form Overview
-📥 Registration Form Fields:
-Name (Text input)
+---
 
-Email (Email input)
+### ✅ Submit Page
 
-Country (Select dropdown)
-
-Profile Picture (Image placeholder)
-
-Submit Button
-
-✅ Submit Page
 After submission, it shows:
 
-Entered name
+- Entered name
+- Entered email
+- Selected country
+- A confirmation message
 
-Entered email
+Both pages are **centered**, styled with a **light background**, and use **Bootstrap form classes**.
 
-Selected country
+---
 
-A confirmation message
+## 🚀 How to Run
 
-Both pages are centered, styled with a light background, and Bootstrap form classes.
+### 1. Clone the repo or create the main file
 
-🚀 How to Run
+Save the main code in a file called `main.py`.
 
-1. Clone the repo / Create main file
-   Save this project in a file called main.py.
-
-bash
+```bash
 mkdir FormPy && cd FormPy
+# Save main.py here
+```
 
-# save main.py here
+### 2. Create & activate virtual environment (optional but recommended)
 
-2. Create & activate virtual environment (optional but recommended)
-
-bash
+```bash
+# Create virtual environment
 python -m venv venv
 
-# On Windows
-
+# Activate it
+# On Windows:
 venv\Scripts\activate
 
-# On Mac/Linux
-
+# On Mac/Linux:
 source venv/bin/activate
+```
 
-3. Install dependencies
+### 3. Install dependencies
 
-bash
+```bash
 pip install fastapi uvicorn
+```
 
-4. Run the server
+### 4. Run the server
 
-bash
+```bash
 uvicorn main:app --reload --port 3000
-Visit: <http://localhost:3000>
+```
 
-📁 Folder Structure (if using images)
+Then open your browser and visit: [http://localhost:3000](http://localhost:3000)
 
-cpp
+---
 
+## 📁 Folder Structure
+
+```
 FormPy/
 ├── main.py
 ├── static/
-│ └── logo.png
+│   └── logo.png
 └── README.md
-
-Use the static/ folder for images if you add one in the future.
-
 ```
 
-```
+> Use the `static/` folder for any images you want to serve (e.g., a logo).
+
+---
+
+## 🙌 Final Notes
+
+This project is a hands-on demonstration of how to combine:
+
+- Object-Oriented Programming
+- Python web frameworks
+- Bootstrap styling
+  … to build a **flexible and maintainable HTML form system**.
+
+Pull requests and suggestions are welcome!
