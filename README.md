@@ -26,12 +26,11 @@ All HTML elements (`input`, `select`, `a`, `img`, `div`, `form`) are modeled usi
 
 Each HTML element used in the form is represented by a Python class:
 
-```python
 class HTMLElement:
-    def __init__(self, tag: str, attrs: dict = None, content: str = "", self_closing=False):
-        ...
-    def render(self) -> str:
-        ...
+def **init**(self, tag: str, attrs: dict = None, content: str = "", self_closing=False):
+...
+def render(self) -> str:
+...
 
 Specialized Elements
 Input(HTMLElement) – supports type, name, placeholder, etc.
@@ -74,19 +73,24 @@ Both pages are centered, styled with a light background, and Bootstrap form clas
 🚀 How to Run
 
 1. Clone the repo / Create main file
-Save this project in a file called main.py.
+   Save this project in a file called main.py.
 
 bash
 mkdir FormPy && cd FormPy
+
 # save main.py here
 
 2. Create & activate virtual environment (optional but recommended)
 
 bash
 python -m venv venv
+
 # On Windows
+
 venv\Scripts\activate
+
 # On Mac/Linux
+
 source venv/bin/activate
 
 3. Install dependencies
@@ -98,7 +102,7 @@ pip install fastapi uvicorn
 
 bash
 uvicorn main:app --reload --port 3000
-Visit: http://localhost:3000
+Visit: <http://localhost:3000>
 
 📁 Folder Structure (if using images)
 
@@ -107,8 +111,11 @@ cpp
 FormPy/
 ├── main.py
 ├── static/
-│   └── logo.png
+│ └── logo.png
 └── README.md
 
 Use the static/ folder for images if you add one in the future.
+
+```
+
 ```
